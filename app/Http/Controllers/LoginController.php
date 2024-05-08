@@ -42,26 +42,7 @@ class LoginController extends Controller
         }
 
     }
-    public function loginMember()
-    {
-        $email = request()->email;
-        $password = request()->password;
-
-        $data =  Member::where('email', $email)->where('password', $password)->first();
-        if($data){
-            Session::put('member_id', $data->id);
-   
-            Session::put('role', 'member');
-
-            Alert::success('Login Berhasil', 'Anda Berhasil Login ');
-
-            return redirect()->route('member');
-        }else{
-            Alert::error('Login Gagal', 'Password atau Username Salah');
-            return redirect()->back();
-        }
-
-    }
+  
 
     public function logout(){
     

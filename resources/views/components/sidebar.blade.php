@@ -24,12 +24,12 @@
                         </a>
                     </li>
                     <li class="sidebar-item mb-2">
-                        <a class="sidebar-link {{ request()->is('data-member*') ? 'active' : '' }}"
-                            href="{{ route('data-member') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ request()->is('data-account*') ? 'active' : '' }}"
+                            href="{{ route('data-account') }}" aria-expanded="false">
                             <span>
                                 <i class='bx bxs-dashboard'></i>
                             </span>
-                            <span class="hide-menu">Data Member</span>
+                            <span class="hide-menu">Data Account</span>
                         </a>
                     </li>
                 @endif

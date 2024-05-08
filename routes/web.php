@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '/', 'middleware' => 'login'], function () {
     route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    route::get('/data-account', [AdminController::class, 'dataAccount'])->name('data-account');
+    Route::get('edit-member/{username}/detail', [AdminController::class, 'editDataAccount'])->name('edit-account');
+
+
+    route::get('/author', [AuthorController::class, 'index'])->name('author');
 });
 
 
